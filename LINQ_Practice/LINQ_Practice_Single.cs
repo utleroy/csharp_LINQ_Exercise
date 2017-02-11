@@ -38,7 +38,7 @@ namespace LINQ_Practice
         [TestMethod]
         public void GetOnlyCohortWithThreeJuniorInstructors()
         {
-            var ActualCohort = PracticeData/*FILL IN LINQ EXPRESSION*/;
+            var ActualCohort = PracticeData;
             Assert.AreEqual(ActualCohort, CohortBuilder.Cohort3);
         }
 

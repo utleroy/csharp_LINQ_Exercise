@@ -30,29 +30,29 @@ namespace LINQ_Practice
         [TestMethod]
         public void DoAllCohortsHaveTwoOrMoreJuniorInstructors()
         {
-            var doAll = PracticeData/*FILL IN LINQ EXPRESSION*/;
-            Assert.IsTrue(false); //<-- change false to doAll
+            var doAll = PracticeData.All(cohort => cohort.JuniorInstructors.Count() >= 2);
+            Assert.IsTrue(doAll); //<-- change false to doAll
         }
 
         [TestMethod]
         public void DoAllCohortsFiveStudents()
         {
-            var doAll = PracticeData/*FILL IN LINQ EXPRESSION*/;
-            Assert.IsTrue(false); //<-- change false to doAll
+            var doAll = PracticeData.All(GenerateCohorts => GenerateCohorts.Students.Count() >= 5);
+            Assert.IsTrue(doAll); //<-- change false to doAll
         }
 
         [TestMethod]
         public void DoAllCohortsHavePrimaryInstructorsBornIn1980s()
         {
-            var doAll = PracticeData/*FILL IN LINQ EXPRESSION*/;
-            Assert.IsFalse(true); //<-- change true to doAll
+            var doAll = PracticeData.All(GenerateCohorts => GenerateCohorts.PrimaryInstructor.Birthday.Year > 1979 && GenerateCohorts.PrimaryInstructor.Birthday.Year < 1990);
+            Assert.IsFalse(doAll); //<-- change true to doAll
         }
 
         [TestMethod]
         public void DoAllCohortsHaveActivePrimaryInstructors()
         {
-            var doAll = PracticeData/*FILL IN LINQ EXPRESSION*/;
-            Assert.IsTrue(true); //<-- change true to doAll
+            var doAll = PracticeData.All(cohort => cohort.PrimaryInstructor.Active == true);
+            Assert.IsTrue(doAll); //<-- change true to doAll
         }
 
         [TestMethod]
