@@ -38,14 +38,14 @@ namespace LINQ_Practice
         [TestMethod]
         public void GetOnlyCohortWithThreeJuniorInstructors()
         {
-            var ActualCohort = PracticeData;
+            var ActualCohort = PracticeData.Single(cohort => cohort.JuniorInstructors.Count()==3);
             Assert.AreEqual(ActualCohort, CohortBuilder.Cohort3);
         }
 
         [TestMethod]
         public void GetOnlyCohortThatIsFullTimeAndPrimaryInstructorBirthdayInTheFuture()
         {
-            var ActualCohort = PracticeData/*FILL IN LINQ EXPRESSION*/;
+            var ActualCohort = PracticeData.Single(cohort => cohort.FullTime == true && cohort.PrimaryInstructor.Birthday.Year > 2017);
             Assert.AreEqual(ActualCohort, CohortBuilder.Cohort2);
         }
 
